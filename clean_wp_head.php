@@ -77,7 +77,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 		return $urls;
 	}
 
-	// Remove REST API functions
+// Remove REST API functions
 function remove_json_api () {
 
     // Remove the REST API lines from the HTML Header
