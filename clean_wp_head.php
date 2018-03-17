@@ -8,8 +8,14 @@ Author: Roland Bende
 Author URI: bwebdesign.hu
 */
 
-// Remove WP Generator, RSD, XMLRPC, WLW, ShortLink and Comment Feed links, Remove prev and next article links
-remove_action('wp_head', 'wp_generator');
+// Remove WP Generator from head and RSS
+//remove_action('wp_head', 'wp_generator');
+function remove_wp_version() {
+	return '';
+}
+add_filter('the_generator', 'remove_wp_version');
+
+// Remove RSD, XMLRPC, WLW, ShortLink and Comment Feed links, Remove prev and next article links
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'index_rel_link');
